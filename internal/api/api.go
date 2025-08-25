@@ -1,33 +1,6 @@
 package api
 
 import (
-<<<<<<< HEAD
-	"github.com/beganov/L0/internal/storage"
-	"github.com/gin-gonic/gin"
-)
-
-func RouteRegister(router *gin.Engine) {
-	server := NewServer()
-	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler)) // Маршрут для сваггера
-	router.GET("/order/:order_uid", server.getOrder)
-}
-
-func SetupRouter() *gin.Engine {
-	router := gin.Default()
-	return router
-}
-
-func NewServer() *httpServer {
-	store := storage.NewStorage()
-	return &httpServer{store: store}
-}
-
-func (hs *httpServer) getOrder(c *gin.Context) {
-}
-
-type httpServer struct {
-	store *storage.Storage // хранилище для управления комнатами
-=======
 	"context"
 	"encoding/json"
 	"net/http"
@@ -114,5 +87,4 @@ func writeJSON(w http.ResponseWriter, data interface{}) {
 	if err := json.NewEncoder(w).Encode(data); err != nil {
 		logger.Error(err, "cannot encode json")
 	}
->>>>>>> 6968df1 (Add all commit)
 }
